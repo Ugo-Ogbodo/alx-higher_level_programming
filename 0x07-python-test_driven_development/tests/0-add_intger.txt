@@ -1,0 +1,54 @@
+======================== The 0-add_integer Module =====================
+
+This module defines an ``integer addition`` function in the ``add_integer(a, b=98)`` module
+
+Usage
+=====
+
+Importing the function module for testing:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Adding both as integers:
+
+    >>> add_integer(1, 2)
+    3
+
+    >>> add_integer(2, -5)
+    -3
+
+Adding arguments that are non integers and non float will raise TypeError.
+
+Adding non integer:
+
+    >>> add_integer(2, "bike")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+Adding non integer and non float to both arguments:
+The first argument will always raise the error
+
+    >>> add_integer("food", "plate")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Providing only one value:
+
+The second argument is optional and has default of 98
+    >>> add_integer(2)
+    100
+
+Using Not a number:
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Dealing with infinity arguments
+    >>> add_integer(2, float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
